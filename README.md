@@ -9,5 +9,5 @@ Aplikasi ini dibuat menggunakan framework [Laravel](https://laravel.com/)
 | NPM           | Name              | Role                  |
 | ------------- |-------------------|-----------------------|
 | 140810180015  | Meira Dwiana A.   | Product Owner & QA    |
-| 140810180001  | Sheila Azhar      | Back-end              |
-| 140810180059  | Anne Audistya F.  | Front-end             |
+| 140810180001  | Sheila Azhar      | Back-end Developer    |
+| 140810180059  | Anne Audistya F.  | Front-end Developer   |
