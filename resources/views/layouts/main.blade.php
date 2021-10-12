@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     {{-- My Style --}}
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     
     <title>Recy-clink! | {{ $title }}</title>
   </head>
-  <body>
+  <body style="font-family: 'Bree Serif'">
 
     @include('partials.navbar')
     
-    <div class="container" mt-4>
+    <div class="container">
         @yield('container')
     </div>
 

@@ -18,3 +18,18 @@
     border-radius : 0;
     margin-bottom: -1px;
   }
+
+/*Home*/
+
+.landing {
+  background-image: url(../img/Cover2.png);
+  height: 881px;
+}
+.landing h1 {
+  margin-top: 200px;
+  color: white;
+}
+
+.fitur h2{
+  text-align: center;
+}

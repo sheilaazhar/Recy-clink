@@ -1,22 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #52B69A">
     <div class="container">
-      <a class="navbar-brand" href="\">Recy-Clink!</a>
+      <a class="navbar-brand" href="/">
+        <img src="./img/logo.png" alt="logo" height="35">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" href="/">Home</a>
+          <li class="nav-item ms-5">
+            <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About Us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About</a>
+          <li class="nav-item ms-5">
+            <a class="nav-link {{ ($active === "help") ? 'active' : '' }}" href="/help">Help</a>
           </li>
           @auth
-          <li class="nav-item">
+          <li class="nav-item ms-5">
+            <a class="nav-link {{ ($active === "sampah") ? 'active' : '' }}" href="/sampah">Buang Sampah</a>
+          </li>
+          <li class="nav-item ms-5">
             <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Posts</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ms-5">
             <a class="nav-link {{ ($active === "produk") ? 'active' : '' }}" href="/produk">Produk</a>
           </li>
           @endauth
@@ -41,7 +46,7 @@
               </li>
                   @else
               <li class="nav-item">
-                <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                <a href="/login" class="btn btn-success {{ ($active === "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
               </li>
               @endauth
             </ul>
