@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
-use App\Models\Category;
 use App\Models\Post;
+use App\Models\Produk;
 
 class DatabaseSeeder extends Seeder
 {
@@ -67,5 +67,17 @@ class DatabaseSeeder extends Seeder
         //     'category_id'=>2,
         //     'user_id'=>2
         // ]);
+
+        Produk::create([
+            'nama_produk'=>'Fancy Bag Plastic',
+            'harga'=>85000,
+            'stok'=>10
+         ]);
+
+        Produk::create([
+            'nama_produk'=>'Gaun Fashion Paper',
+            'harga'=>145000,
+            'stok'=>5
+         ]);
     }
 }

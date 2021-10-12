@@ -17,7 +17,7 @@
             <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Posts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "produk") ? 'active' : '' }}" href="/">Produk</a>
+            <a class="nav-link {{ ($active === "produk") ? 'active' : '' }}" href="/produk">Produk</a>
           </li>
           @endauth
         </ul>
