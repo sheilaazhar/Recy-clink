@@ -20,7 +20,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <div class="text-uppercase fw-bold mb-4">
-            <img src="./img/logo.png" alt="Logo">
+            <img class="img-fluid" src="./img/logo.png" alt="Logo">
           </div>
           <p>
             Recy-clink <br> Jl.  ...... Kota Bandung
@@ -75,7 +75,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2021 Copyright:
-    <a class="text-reset fw-bold">Recy-Clink!</a>
+    <a class="text-reset">Recy-Clink!</a>
   </div>
   <!-- Copyright -->
 </footer>
