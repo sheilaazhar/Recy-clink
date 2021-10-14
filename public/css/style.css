@@ -3,7 +3,7 @@
   }
   
   .form-signin input[type="email"] {
-    margin-bottom: -1px;
+    margin-bottom: 10px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -13,10 +13,25 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+  .form-signin .center{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .form-signin .button {
+    background-color: #75C892;
+  }
   
   .form-registration input {
     border-radius : 0;
-    margin-bottom: -1px;
+    margin-bottom: 10px;
+  }
+  .form-registration select {
+    border-radius : 0;
+    margin-bottom: 10px;
+  }
+  .form-registration .button {
+    background-color: #75C892;
   }
 
 /*Home*/

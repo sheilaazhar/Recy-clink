@@ -19,7 +19,8 @@
       @endif
 
         <main class="form-signin">
-            <h1 class="h3 mb-3 fw-normal text-center mt-3">Please login</h1>
+            <h1 class="h3 mb-3 fw-normal text-center mt-3">Login</h1>
+            <img src="./img/login.png" alt="logo" height="150" class="center">
             <form action="/login" method="post">
               @csrf
               <div class="form-floating">
@@ -36,9 +37,9 @@
                 <label for="password">Password</label>
               </div>
     
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+              <button class="w-100 btn btn-lg button" type="submit">Login</button>
             </form>
-            <small class="d-block text-center mt-3">Not registered? <a href="/register">Register Now!</a></small>
+            <small class="d-block text-center mt-3">Belum punya akun? <a href="/register">Register Sekarang!</a></small>
           </main>
     </div>
 </div>
