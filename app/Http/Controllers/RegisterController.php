@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Kecamatan;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -12,7 +13,8 @@ class RegisterController extends Controller
     {
         return view('register.index', [
             'title'=>'Register',
-            'active'=>'register'
+            'active'=>'register',
+            'kecamatans' => Kecamatan::all()
         ]);
     }
 
@@ -23,6 +25,7 @@ class RegisterController extends Controller
             'username'=>['required','min:3','max:255','unique:users'],
             'email'=>'required|email:dns|unique:users',
             'phone'=>'required|min:10|max:15',
+            'kecamatan_id'=>'required',
             'address'=>'required|max:255',
             'password'=>'required|min:5|max:255'
         ]);

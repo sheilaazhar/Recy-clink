@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'email',
         'phone',
+        'kecamatan_id',
         'address',
         'password',
     ];
@@ -54,5 +55,10 @@ class User extends Authenticatable
     public function pesanan()
     {
         return $this->hasMany(Pesanan::class);
+    }
+
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class);
     }
 }

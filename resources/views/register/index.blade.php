@@ -36,6 +36,21 @@
                 @enderror
               </div>
               <div class="form-floating">
+                <select class="form-select" name="kecamatan_id">
+                  @foreach ($kecamatans as $kecamatan)
+                  @if(old('kecamatan_id') == $kecamatan->id)
+                    <option value="{{ $kecamatan->id }}" selected>{{ $kecamatan->nama_kecamatan }}</option>
+                  @else 
+                    <option value="{{ $kecamatan->id }}">{{ $kecamatan->nama_kecamatan }}</option>
+                  @endif
+                  @endforeach
+                </select>
+                <label for="kecamatan">Kecamatan</label>
+                @error('kecamatan')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-floating">
                 <input type="address" name="address" class="form-control @error('address') is-invalid @enderror" id="address" placeholder="Address" required value="{{ old('address') }}">
                 <label for="address">Address</label>
                 @error('address')

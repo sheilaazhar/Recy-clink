@@ -14,13 +14,14 @@
         </div>
     </div>
     <div class="fitur">
-        <div class="container mt-5">
+        <div class="container">
             <h2>Fitur - fitur</h2>
-            <div class="card-deck mt-5 mb-5">
+            <div class="row justify-content-md-center">
+            <div class="card-deck col-10 mt-5 mb-5">
                 <div class="card border-success">
                   <img class="card-img-top" src="./img/cardsampah.png" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title">Pengumpulan Barang Bekas</h5>
+                    <h5 class="card-title mt-2">Pengumpulan Barang Bekas</h5>
                     <p class="card-text text-muted">Kumpulkan barang bekasmu dan dapatkan merchandise menarik kami</p>
                     @auth
                     <div class="button-mulai ms-auto mt-4">
@@ -67,6 +68,7 @@
                 </div>
               </div>
         </div>
+    </div>
     </div>
 @endsection
     
