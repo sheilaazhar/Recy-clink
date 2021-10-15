@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
+<div class="container">
     <h1 class='mt-2'>Our Product</h1>
     <div class="row">
     @foreach($produks as $produk)
@@ -13,11 +14,18 @@
                   <strong>Harga : Rp{{ number_format($produk->harga) }}</strong><br>
                   <strong>Stok : {{ $produk->stok }}</strong>
               </p>
-              <a href="#" class="btn btn-primary">Pesan</a>
+              <form action="/pesan/{{ $produk->id }}" method="post">
+              @csrf
+              <div class="form-floating">
+                <input type="number" name="jumlah" class="form-control" id="jumlah" placeholder="jumlah pesan" required>
+                <label for="jumlah">Jumlah Pesanan</label>
+              </div>
+              <button type="submit" class="btn btn-primary mt-3">Pesan</button>
+            </form>
             </div>
           </div>
     </div>
     @endforeach
     </div>
-    
+  </div>
 @endsection

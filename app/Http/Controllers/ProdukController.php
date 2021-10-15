@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\Pesanan;
+use App\Models\PesananDetail;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ProdukController extends Controller
 {
@@ -14,6 +18,65 @@ class ProdukController extends Controller
            'active'=> 'produk',
            "produks" => Produk::paginate(20)
         ]);
+    }
+
+    public function pesan(Request $request, $id)
+    {
+        $produk = Produk::where('id', $id)->first();
+        $tanggal = Carbon::now();
+
+        //validasi stok
+        if($request->jumlah > $produk->stok)
+        {
+            return redirect('produk');
+        }
+
+        //cek validasi
+        $cek_pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+
+        //simpan ke db pesanan
+        if(empty($cek_pesanan))
+        {
+            $pesanan = new Pesanan;
+            $pesanan->user_id = Auth::user()->id;
+            $pesanan->tanggal = $tanggal;
+            $pesanan->total_harga = 0;
+            $pesanan->status = 0;
+            $pesanan->save();
+        }
+
+        //simpan ke db pesanan detail
+        $pesanan_baru = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+
+        //cek pesanan detail
+        $cek_pesanan_detail = PesananDetail::where('produk_id', $produk->id)->where('pesanan_id', $pesanan_baru->id)->first();
+        if(empty($cek_pesanan_detail))
+        {
+            $pesanan_detail = new PesananDetail;
+            $pesanan_detail->produk_id = $produk->id;
+            $pesanan_detail->pesanan_id = $pesanan_baru->id;
+            $pesanan_detail->jumlah = $request->jumlah;
+            $pesanan_detail->jml_harga = $produk->harga*$request->jumlah;
+            $pesanan_detail->save();
+        }
+        else{
+            $pesanan_detail = PesananDetail::where('produk_id', $produk->id)->where('pesanan_id', $pesanan_baru->id)->first();
+            $pesanan_detail->jumlah = $pesanan_detail->jumlah+$request->jumlah;
+            
+            //harga sekarang
+            $harga_pesanan_detail_baru =  $produk->harga*$request->jumlah;
+            $pesanan_detail->jml_harga = $pesanan_detail->jml_harga+$harga_pesanan_detail_baru;
+            $pesanan_detail->update();
+        }
+
+        //jumlah total
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+        $pesanan->total_harga = $pesanan->total_harga+$produk->harga*$request->jumlah;
+        $pesanan->update();
+
+
+        return redirect('produk');
+
     }
 
     /**

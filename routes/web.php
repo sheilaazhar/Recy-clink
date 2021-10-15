@@ -49,6 +49,8 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
         ]);
     });
 
+    Route::post('pesan/{id}', [ProdukController::class, 'pesan']);
+
     Route::get('/posts', [PostController::class, 'index']);
     
     //Halaman Single Post

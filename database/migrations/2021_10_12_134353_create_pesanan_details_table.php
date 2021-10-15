@@ -15,7 +15,7 @@ class CreatePesananDetailsTable extends Migration
     {
         Schema::create('pesanan_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('produk_id');
             $table->foreignId('pesanan_id');
             $table->integer('jumlah');
             $table->integer('jml_harga');
