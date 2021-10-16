@@ -59,3 +59,69 @@ footer {
   color: white !important;
   font-weight: lighter;
 }
+
+/*produk*/
+
+.home-produk .col-7{
+  background-image: url(../img/homeproduk.png);
+  height: 500px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: left left;
+  margin: 0;
+  overflow:hidden;
+}
+
+.home-produk .col-5 h1{
+  margin-top: 150px;
+  font-weight: 900;
+  font-family: Trochut;
+  font-size: 120px;
+  color: #09523D;
+}
+
+.list-produk .card {
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    border: 1;
+    border-color: #52B69A;
+    border-radius: 1rem
+}
+.list-produk .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06)
+}
+
+.list-produk .card .card-img-top{
+  border-radius: 10px;
+}
+
+.list-produk .card .card-title{
+  margin-top: -10px;
+  color: #18A57D;
+}
+
+.list-produk .card .card-text h5{
+  margin-top: -5px;
+}
+
+/*posts*/
+.pagination > li 
+{
+    color: black;
+}
+
+
+.pagination > li > a:hover
+{
+    background-color: #75C892;
+    border-color: #75C892;
+}
+
+.pagination > .active > span
+{
+    color: white;
+    background-color: #09523D !Important;
+    border: solid 1px #75C892 !Important;
+}
