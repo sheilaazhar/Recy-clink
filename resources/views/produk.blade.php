@@ -17,13 +17,17 @@
                 <small class="text-muted mb-1">Stok : {{ $produk->stok }}</small>
                 <h5 class="card-title text-center">{{ $produk->nama_produk }}</h5>
                 <div class="card-text text-center">
-                    <p class="text-muted text-center">Bahan</p>
+                    <p class="text-muted text-center">Bahan : {{ $produk->bahan }}</p>
                     <h5 class="text-center"><b>Rp{{ number_format($produk->harga) }}</b></h5>
                 </div>
                 <div class="text-center">
                   <form action="/pesan/{{ $produk->id }}" method="post">
                   @csrf
-                  <a type="submit" class="btn btn-success center mt-1 mb-1" >Pesan</a>
+                  <div class="form-floating">
+                    <input type="number" name="jumlah" class="form-control" id="jumlah" placeholder="jumlah pesan" required>
+                    <label for="jumlah">Jumlah Pesanan</label>
+                  </div>
+                  <button type="submit" class="btn btn-success center mt-1 mb-1">Pesan</button>
                   </form>
                 </div>
               </div>

@@ -41,6 +41,7 @@
                     </tr>
                     @endforeach
                     <tr>
+                        <td></td>
                         <td colspan="4" align="right"><strong>Total Harga : <strong></td>
                         <td>Rp{{ number_format($pesanan->total_harga) }}</td>
                         <td>

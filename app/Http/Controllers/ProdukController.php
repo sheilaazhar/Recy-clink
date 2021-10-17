@@ -139,7 +139,7 @@ class ProdukController extends Controller
             $produk->update();
         }
 
-        return redirect('keranjang');
+        return redirect('profil');
     }
 
     /**

@@ -73,12 +73,14 @@ class DatabaseSeeder extends Seeder
 
         Produk::create([
             'nama_produk'=>'Fancy Bag Plastic',
+            'bahan'=>'Plastik',
             'harga'=>85000,
             'stok'=>10
          ]);
 
         Produk::create([
             'nama_produk'=>'Gaun Fashion Paper',
+            'bahan'=>'kertas',
             'harga'=>145000,
             'stok'=>5
          ]);
