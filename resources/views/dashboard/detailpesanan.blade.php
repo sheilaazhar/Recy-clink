@@ -2,9 +2,8 @@
 
 @section('container')
 <div class="container">
-    <h1 class='mt-2'>Profil Saya</h1>
-    <h3>{{ auth()->user()->name  }}</h3>
-    <h4>{{ auth()->user()->username }}</h4><br>
+    <h1 class='mt-2'>Detail Pesanan Saya</h1>
+    <h3>{{ $pesanan->tanggal }}</h3>
     <h4>Riwayat Pembelian</h4>
     <div class="row">
         <div class="col-md-12 mt-2">
@@ -12,8 +11,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Tanggal Pesan</th>
-                        <th>Total Produk</th>
+                        <th>Nama Produk</th>
+                        <th>Jumlah</th>
                         <th>Total Harga</th>
                         <th>Status</th>
                         <th>Aksi</th>
@@ -28,7 +27,7 @@
                         <td>{{ $pesanan->total_produk }} pcs</td>
                         <td align="left">Rp{{ number_format($pesanan->total_harga) }}</td>
                         <td></td>
-                        <td><a href="" class="badge bg-info">Detail</a></td>
+                        <td><a href="/profil/pesanan{{ $pesanan->id }}" class="badge bg-info">Detail</a></td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -34,7 +34,22 @@
                   Welcome back, {{ auth()->user()->username }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/profil"><i class="bi bi-layout-text-sidebar-reverse"></i> My Profil</a></li>
+                  <li><a class="dropdown-item" href="/profil"><i class="bi bi-layout-text-sidebar-reverse"></i> Profil Saya</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <?php
+                    $pesanan_utama = \App\Models\Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+                    if(!empty($pesanan_utama))
+                    {
+                      $cart = \App\Models\PesananDetail::where('pesanan_id', $pesanan_utama->id)->count();
+                    }
+                    ?>
+                    <a class="dropdown-item" href="/keranjang">
+                      <i class="bi bi-cart4"></i>
+                      @if(!empty($cart))
+                      <span class="badge badge-danger">{{ $cart }}</span>
+                      @endif
+                       Keranjang</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li>
                     <form action="/logout" method="post">

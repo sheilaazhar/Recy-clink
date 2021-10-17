@@ -41,6 +41,7 @@ class ProdukController extends Controller
             $pesanan->user_id = Auth::user()->id;
             $pesanan->tanggal = $tanggal;
             $pesanan->total_harga = 0;
+            $pesanan->total_produk = 0;
             $pesanan->status = 0;
             $pesanan->save();
         }
@@ -72,11 +73,73 @@ class ProdukController extends Controller
         //jumlah total
         $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
         $pesanan->total_harga = $pesanan->total_harga+$produk->harga*$request->jumlah;
+        $pesanan->total_produk = $pesanan->total_produk+$request->jumlah;
         $pesanan->update();
 
+        return redirect('keranjang');
+    }
 
-        return redirect('produk');
+    public function keranjang()
+    {
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+        if(!empty($pesanan))
+        {
+            $pesanan_details = PesananDetail::where('pesanan_id', $pesanan->id)->get();
+        }
 
+        if(!empty($pesanan_details))
+        {
+            return view('keranjang', compact('pesanan', 'pesanan_details'), [
+                "title" => "Keranjang",
+                'active'=> 'keranjang'
+            ]);
+        }
+        else
+        {
+            return view('keranjang', compact('pesanan'), [
+                "title" => "Keranjang",
+                'active'=> 'keranjang'
+            ]);
+        }
+        
+    }
+
+    public function delete($id)
+    {
+        //if($post->image){
+        //    Storage::delete($post->image);
+        //}
+        
+        $pesanan_detail = PesananDetail::where('id', $id)->first();
+
+        $pesanan = Pesanan::where('id', $pesanan_detail->pesanan_id)->first();
+        $pesanan->total_harga = $pesanan->total_harga-$pesanan_detail->jml_harga;
+        $pesanan->total_produk = $pesanan->total_produk-$pesanan_detail->jumlah;
+        $pesanan->update();
+
+        $pesanan_detail->delete();
+        $pesananol = Pesanan::where('total_harga', $pesanan->total_harga=0);
+        $pesananol->delete();
+
+        return redirect('keranjang')->with('success', 'Produk berhasil dihapus dari keranjang!');
+    }
+
+    public function checkout()
+    {
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
+        $pesanan_id = $pesanan->id;
+        $pesanan->status = 1;
+        $pesanan->tanggal = Carbon::now();
+        $pesanan->update();
+
+        $pesanan_details = PesananDetail::where('pesanan_id', $pesanan_id)->get();
+        foreach($pesanan_details as $pesanan_detail){
+            $produk = Produk::where('id', $pesanan_detail->produk_id)->first();
+            $produk->stok = $produk->stok-$pesanan_detail->jumlah;
+            $produk->update();
+        }
+
+        return redirect('keranjang');
     }
 
     /**

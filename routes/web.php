@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,14 +43,13 @@ Route::group(['middleware' =>'revalidate'], function (){
 });
 
 Route::group(['middleware' =>['auth','revalidate']], function (){
-    Route::get('/profil', function () {
-        return view('profil', [
-            "title" => "Profil",
-            'active'=> 'profil',
-        ]);
-    });
+    Route::get('/profil', [ProfilController::class, 'index']);
+    //Route::get('/profil/{pesanan:id}', [ProfilController::class, 'detailpesanan']);
 
     Route::post('pesan/{id}', [ProdukController::class, 'pesan']);
+    Route::get('/keranjang', [ProdukController::class, 'keranjang']);
+    Route::delete('/keranjang/{id}', [ProdukController::class, 'delete']);
+    Route::get('/checkout', [ProdukController::class, 'checkout']);
 
     Route::get('/posts', [PostController::class, 'index']);
     

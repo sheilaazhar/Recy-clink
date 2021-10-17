@@ -17,6 +17,7 @@ class CreatePesanansTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->date('tanggal');
+            $table->integer('total_produk');
             $table->integer('total_harga');
             $table->string('status');
             $table->timestamps();
