@@ -1,22 +1,21 @@
 @extends('layouts.main')
 
 @section('container')
-<h1 class="mt-2 mb-3 text-center">{{ $title }}</h1>
+    <h1 class="mt-5 mb-4 text-center">{{ $title }}</h1>
 
-<div class="row justify-content-center mb-3">
-    <div class="col-md-6">
-        <form action="/posts">
-            @if (request('author'))
-                <input type="hidden" name="author" value="{{ request('author') }}">
-            @endif
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request('search') }}">
-                <button class="btn btn-danger" type="submit">Search</button>
-              </div>
-        </form>
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <form action="/posts">
+                @if (request('author'))
+                    <input type="hidden" name="author" value="{{ request('author') }}">
+                @endif
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cari" name="search" value="{{ request('search') }}">
+                    <button class="btn btn-success" type="submit"><i class="bi bi-search"></i></button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
 @if ($posts->count())
     <div class="card mb-3">
         @if ($posts[0]->image)
@@ -24,14 +23,14 @@
         <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->title }}" class="img-fluid">
         </div>
         @else
-        <img src="https://source.unsplash.com/1200x400?" class="card-img-top" alt="{{ $posts[0]->title }}">
+        <img src="https://source.unsplash.com/1200x400?" class="card-img-top px-4 mt-2" alt="{{ $posts[0]->title }}">
         @endif
         <div class="card-body text-center">
             <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug}}" class="text-decoration-none text-dark">{{ $posts[0]->title }}</a></h3>
             <p>
                 <small class="text-muted"> {{ $posts[0]->created_at->diffForHumans() }}</small></p>
             <p class="card-text">{{ $posts[0]->excerpt }}</p>
-            <a href="/posts/{{ $posts[0]->slug}}" class="text-decoration-none btn btn-primary">Read More</a>
+            <a href="/posts/{{ $posts[0]->slug}}" class="text-decoration-none btn btn-success">Read More</a>
         </div>
   </div>
 
@@ -51,7 +50,7 @@
                       <h5 class="card-title">{{ $post->title }}</h5>
                       <p><small class="text-muted"> {{ $post->created_at->diffForHumans() }}</small></p>
                       <p class="card-text">{{ $post->excerpt }}</p>
-                      <a href="/posts/{{ $post->slug}}" class="btn btn-primary">Read More</a>
+                      <a href="/posts/{{ $post->slug}}" class="btn btn-success">Read More</a>
                     </div>
                   </div>
             </div>
@@ -63,7 +62,7 @@
       <p class="text-center">No post found.</p>
   @endif
 
-  <div class="d-flex justify-content-end">
+  <div class="d-flex justify-content-center mt-2">
     {{ $posts->links() }}
   </div>
   
