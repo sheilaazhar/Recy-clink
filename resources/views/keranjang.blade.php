@@ -52,6 +52,8 @@
                     </tr>
                 </tbody>
             </table>
+            @else
+                <h5>Keranjang Anda Kosong</h5>
             @endif
         </div>
     </div>

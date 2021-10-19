@@ -44,7 +44,7 @@ Route::group(['middleware' =>'revalidate'], function (){
 
 Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::get('/profil', [ProfilController::class, 'index']);
-    //Route::get('/profil/{pesanan:id}', [ProfilController::class, 'detailpesanan']);
+    Route::get('/profil/{id}', [ProfilController::class, 'detailpesanan']);
 
     Route::post('pesan/{id}', [ProdukController::class, 'pesan']);
     Route::get('/keranjang', [ProdukController::class, 'keranjang']);

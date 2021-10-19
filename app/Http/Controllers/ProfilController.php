@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\PesananDetail;
+use App\Models\Produk;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilController extends Controller
 {
@@ -18,15 +20,18 @@ class ProfilController extends Controller
         return view('profil', [
             "title" => "Profil",
             'active'=> 'profil',
-            'pesanans' => Pesanan::where('user_id', auth()->user()->id)->get()
+            'pesanans' => Pesanan::where('user_id', auth()->user()->id)->where('status',1)->get()
         ]);
     }
 
-    public function detailpesanan()
+    public function detailpesanan($id)
     {
-        //return view('detailpesanan', [
-        //    'pesanandetails' => PesananDetail::where('pesanan_id', $pesanan->id)->where('pesanandetail_id', $pesanandetail->id)->first();
-        //]);
+        $pesanan = Pesanan::where('id', $id)->first();
+        $pesanandetails = PesananDetail::where('pesanan_id', $id)->get();
+        return view('detailpesanan', compact('pesanan', 'pesanandetails'), [
+            "title" => "DetailPesanan",
+            'active'=> 'detailpesanan'
+        ]);
     }
 
     /**

@@ -8,6 +8,7 @@
     <h4>Riwayat Pembelian</h4>
     <div class="row">
         <div class="col-md-12 mt-2">
+            @if(!empty($pesanans))
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -28,11 +29,14 @@
                         <td>{{ $pesanan->total_produk }} pcs</td>
                         <td align="left">Rp{{ number_format($pesanan->total_harga) }}</td>
                         <td></td>
-                        <td><a href="" class="badge bg-info">Detail</a></td>
+                        <td><a href="/profil/{{ $pesanan->id }}" class="badge bg-info">Detail</a></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            @else
+            <h5>Anda belum melakukan pembelian</h5>
+            @endif
         </div>
     </div>
 </div>
