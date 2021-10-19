@@ -76,7 +76,7 @@ class ProdukController extends Controller
         $pesanan->total_produk = $pesanan->total_produk+$request->jumlah;
         $pesanan->update();
 
-        return redirect('keranjang');
+        return redirect('keranjang')->with('success', 'Produk berhasil dimasukkan ke keranjang!');
     }
 
     public function keranjang()
@@ -139,7 +139,7 @@ class ProdukController extends Controller
             $produk->update();
         }
 
-        return redirect('profil');
+        return redirect('profil/pesanan/'.$pesanan_id)->with('success', 'Produk berhasil dicheckout!');
     }
 
     /**

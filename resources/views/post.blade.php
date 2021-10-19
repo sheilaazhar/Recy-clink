@@ -18,7 +18,7 @@
                 </article>
                 
 
-                <a href="/blog" class="d-block mt-3">Back to Posts</a>
+                <a href="/posts" class="btn btn-success"><i class="bi bi-arrow-left"></i> Kembali</a>
             </div>
         </div>
     </div>

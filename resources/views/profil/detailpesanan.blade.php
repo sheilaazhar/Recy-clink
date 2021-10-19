@@ -4,7 +4,11 @@
 <div class="container">
     <h1 class='mt-2'>Detail Pesanan Saya</h1>
     <a href="/profil" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
-    <h3>Riwayat Pembelian {{ $pesanan->tanggal }}</h3>
+    <div class="col-md-12 mt-2">
+    <div class="card-body">
+        <h5>Pesanan Anda berhasil di checkout pada <strong>{{ $pesanan->tanggal }}</strong>. Silakan tunggu sesaat lagi pihak kami akan menghubungi Anda melalui nomor telepon.</h5>
+    </div>
+    </div>
     <div class="row">
         <div class="col-md-12 mt-2">
             <table class="table table-striped">

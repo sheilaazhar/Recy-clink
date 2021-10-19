@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\PesananDetail;
-use App\Models\Produk;
+use App\Models\User;
+use App\Models\Kecamatan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
 {
@@ -17,10 +19,11 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        return view('profil', [
+        return view('profil.index', [
             "title" => "Profil",
             'active'=> 'profil',
-            'pesanans' => Pesanan::where('user_id', auth()->user()->id)->where('status',1)->get()
+            'user' => User::where('id', Auth::user()->id)->first(),
+            'pesanans' => Pesanan::where('user_id', auth()->user()->id)->where('status',1)->get(),
         ]);
     }
 
@@ -28,7 +31,7 @@ class ProfilController extends Controller
     {
         $pesanan = Pesanan::where('id', $id)->first();
         $pesanandetails = PesananDetail::where('pesanan_id', $id)->get();
-        return view('detailpesanan', compact('pesanan', 'pesanandetails'), [
+        return view('profil.detailpesanan', compact('pesanan', 'pesanandetails'), [
             "title" => "DetailPesanan",
             'active'=> 'detailpesanan'
         ]);
@@ -72,9 +75,14 @@ class ProfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('profil.edit', [
+            'user' => User::where('id', Auth::user()->id)->first(),
+            'kecamatans' => Kecamatan::all(),
+            'title' => "Edit Profil",
+            'active' => "Edit Profil"
+        ]);
     }
 
     /**
@@ -84,9 +92,31 @@ class ProfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required|max:255',
+            'phone'=>'required|min:10|max:15',
+            'kecamatan_id'=>'required',
+            'address'=>'required|max:255',
+            'password'=>'required|min:5|max:255'
+        ]);
+
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->kecamatan_id = $request->kecamatan_id;
+        $user->address = $request->address;
+        $user->password = $request->password;
+
+        if(!empty($request->password))
+        {
+            $user->password = Hash::make($request->password);
+        }
+        
+        $user->update();
+
+        return redirect('/profil')->with('success', 'Profil Berhasil Diupdate');
     }
 
     /**

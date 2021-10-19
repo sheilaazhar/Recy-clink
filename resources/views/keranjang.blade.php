@@ -3,6 +3,11 @@
 @section('container')
 <div class="container">
     <h1 class='mt-2'><i class="bi bi-cart4"></i> Keranjang</h1>
+    @if(session()->has('success'))
+        <div class="alert alert-success col-lg-8" role="alert">
+        {{ session('success') }}
+        </div>
+    @endif
     <div class="row">
         <div class="col-md-12">
             <a href="/produk" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
@@ -45,7 +50,7 @@
                         <td colspan="4" align="right"><strong>Total Harga : <strong></td>
                         <td>Rp{{ number_format($pesanan->total_harga) }}</td>
                         <td>
-                            <a href="/checkout" class="btn btn-success">
+                            <a href="/checkout" class="btn btn-success" onclick="return confirm('Apakah Anda yakin ingin checkout?')">
                                 <i class="bi bi-cart4"></i> Checkout
                             </a>
                         </td>
