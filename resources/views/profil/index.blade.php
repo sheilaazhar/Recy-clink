@@ -12,6 +12,7 @@
     
     <h3>{{ $user->name  }}</h3>
     <h4>{{ $user->username }}</h4>
+    <h4>{{ $user->jk }}</h4>
     <h4>{{ $user->kecamatan->nama_kecamatan }}</h4>
     <h4>{{ $user->address }}</h4>
     <h4>{{ $user->phone }}</h4>

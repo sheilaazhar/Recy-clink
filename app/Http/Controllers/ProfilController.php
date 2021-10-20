@@ -96,6 +96,7 @@ class ProfilController extends Controller
     {
         $this->validate($request, [
             'name'=>'required|max:255',
+            'jk'=>'required|max:255',
             'phone'=>'required|min:10|max:15',
             'kecamatan_id'=>'required',
             'address'=>'required|max:255',
@@ -104,6 +105,7 @@ class ProfilController extends Controller
 
         $user = User::where('id', Auth::user()->id)->first();
         $user->name = $request->name;
+        $user->jk = $request->jk;
         $user->phone = $request->phone;
         $user->kecamatan_id = $request->kecamatan_id;
         $user->address = $request->address;

@@ -36,6 +36,16 @@
                 @enderror
               </div>
               <div class="form-floating">
+                <select class="form-select" name="jk" id="jk">
+                  <option value="Perempuan">Perempuan</option>
+                  <option value="Laki-Laki">Laki-laki</option>
+                </select>
+                <label for="jk">Jenis Kelamin</label>
+                @error('jk')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-floating">
                 <select class="form-select" name="kecamatan_id">
                   @foreach ($kecamatans as $kecamatan)
                   @if(old('kecamatan_id') == $kecamatan->id)
