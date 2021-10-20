@@ -72,6 +72,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Produk::create([
+            'image'=>'produk-images/XQuBkT8GaX9Fef71L6jJOvji7eQDndRENL6Qw3jg.png',
             'nama_produk'=>'Fancy Bag Plastic',
             'bahan'=>'Plastik',
             'harga'=>85000,
@@ -79,6 +80,7 @@ class DatabaseSeeder extends Seeder
          ]);
 
         Produk::create([
+            'image'=>'produk-images/iVoQkIfABJQOqwnAIl8NVdYB80Fyt1e4KnWuUmfX.png',
             'nama_produk'=>'Gaun Fashion Paper',
             'bahan'=>'kertas',
             'harga'=>145000,

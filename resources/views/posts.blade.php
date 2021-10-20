@@ -59,7 +59,7 @@
   </div>
 
   @else
-      <p class="text-center">No post found.</p>
+      <p class="text-center">Tidak ada postingan artikel.</p>
   @endif
 
   <div class="d-flex justify-content-center mt-2">

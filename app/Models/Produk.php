@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produk extends Model
 {
+    protected $guarded = ['id'];
     use HasFactory;
 
     public function pesanan_detail()
