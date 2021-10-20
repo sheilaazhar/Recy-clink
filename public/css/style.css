@@ -125,3 +125,28 @@ footer {
     background-color: #09523D !Important;
     border: solid 1px #75C892 !Important;
 }
+
+/*Profile*/
+
+.profile{
+  margin-top: 20px;
+}
+.username{
+  opacity: 70%;
+}
+.user-center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.garis{
+  margin-left: 100px;
+}
+.pembelian{
+  margin-top: 50px;
+}
+.pembelian h3{
+  text-align: center;
+  margin-top: 20px;
+}
+

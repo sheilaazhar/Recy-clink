@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="container">
-    <h1 class='mt-2'>Edit Profil</h1>
+  <h1 class='mt-2'>Edit Profil</h1>
   <div class="col-lg-8">
       <form method="POST" action="/profil" class="mb-5" enctype="multipart/form-data">
         @csrf
