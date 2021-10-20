@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('usertype')->default(0);
+            $table->string('jk');
             $table->string('phone');
             $table->foreignId('kecamatan_id');
             $table->string('address');

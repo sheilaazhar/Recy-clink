@@ -31,7 +31,7 @@
                     @foreach($pesanan_details as $pesanan_detail)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td><img src="https://source.unsplash.com/150x150?/{{ $pesanan_detail->produk->nama_produk }}" alt="{{ $pesanan_detail->produk->nama_produk }}"></td>
+                        <td><img src="{{ asset('storage/' . $pesanan_detail->produk->image) }}" alt="{{ $pesanan_detail->produk->nama_produk }}"></td>
                         <td>{{ $pesanan_detail->produk->nama_produk }}</td>
                         <td>{{ $pesanan_detail->jumlah }} pcs</td>
                         <td align="left">Rp{{ number_format($pesanan_detail->produk->harga) }}</td>

@@ -57,7 +57,7 @@ class DashboardPostController extends Controller
 
         Post::create($validatedData);
 
-        return redirect('/dashboard/posts')->with('success', 'New post has been added!');
+        return redirect('/dashboard/posts')->with('success', 'Artikel baru berhasil diposting!');
 
 
     }

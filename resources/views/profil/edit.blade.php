@@ -42,6 +42,21 @@
           </div>
           @enderror
         </div>
+        <div class="form-floating">
+          <select class="form-select" name="jk" id="jk">
+            @if(old('jk', $user->jk) == 'Perempuan')
+            <option value="Perempuan" selected>Perempuan</option>
+            <option value="Laki-Laki">Laki-laki</option>
+            @else
+            <option value="Perempuan">Perempuan</option>
+            <option value="Laki-Laki" selected>Laki-laki</option>
+            @endif
+          </select>
+          <label for="jk">Jenis Kelamin</label>
+          @error('jk')
+          <div class="invalid-feedback">{{ $message }}</div>
+          @enderror
+        </div>
         <div class="mb-3">
           <label for="kecamatan" class="form-label">Kecamatan</label>
           <select class="form-select" name="kecamatan_id">
