@@ -2,15 +2,14 @@
 
 @section('container')
 <div class="container">
-    <h1 class='mt-2'>Detail Pesanan Saya</h1>
-    <a href="/profil" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Kembali</a>
+    <h1 class='mt-3 mb-4'>Detail Pesanan Saya</h1>
     <div class="col-md-12 mt-2">
-    <div class="card-body">
-        <h5>Pesanan Anda berhasil di checkout pada <strong>{{ $pesanan->tanggal }}</strong>. Silakan tunggu sesaat lagi pihak kami akan menghubungi Anda melalui nomor telepon.</h5>
+    <div class="card-body" style="background-color: #FFC0C0">
+        <h6>Pesanan Anda berhasil di checkout pada <strong>{{ $pesanan->tanggal }}</strong>. Silakan tunggu sesaat lagi pihak kami akan menghubungi Anda melalui nomor telepon.</h6>
     </div>
     </div>
     <div class="row">
-        <div class="col-md-12 mt-2">
+        <div class="col-md-12 mt-4">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -42,6 +41,9 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    <div class="col-md-12 mt-3 justify-content-md-end">
+        <a href="/produk"><i class="bi bi-arrow-left"></i> Kembali</a>
     </div>
 </div>
 

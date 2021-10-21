@@ -53,8 +53,9 @@
                 </table>
                 @else
                 <h3>ANDA BELUM PERNAH MEMBELI PRODUK RECY-CLINK!</h3>
-                @endif
                 <small class="d-block text-center mt-3"><a href="/produk">Beli produk RECY-CLINK! sekarang >>></a></small>
+                @endif
+                <small class="d-block text-center mt-3"><a href="/produk">Beli produk RECY-CLINK! lainnya sekarang >>></a></small>
             </div>
         </div>
     </div>
