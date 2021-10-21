@@ -3,12 +3,12 @@
 @section('container')
 <div class="container">
     @if(session()->has('success'))
-        <div class="alert alert-success col-lg-8" role="alert">
+        <div class="alert alert-success col-lg-12" role="alert">
         {{ session('success') }}
         </div>
     @endif
     <div class="row profile">
-        <div class="col-md-3 mt-3">
+        <div class="col-md-3 mt-3">  
             <img src="./img/userwanita.png" height="200" class="user-center">
         </div>
         <div class="col-md-7 mt-5">
