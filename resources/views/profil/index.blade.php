@@ -8,8 +8,12 @@
         </div>
     @endif
     <div class="row profile">
-        <div class="col-md-3 mt-3">  
-            <img src="./img/userwanita.png" height="200" class="user-center">
+        <div class="col-md-3 mt-3"> 
+            @if($user->jk == 'Perempuan')
+                <img src="./img/userwanita.png" height="200" class="user-center">
+            @else
+                <img src="./img/userpria.png" height="200" class="user-center">
+            @endif
         </div>
         <div class="col-md-7 mt-5">
             <h1 class="name">{{ $user->name  }} </h1>
