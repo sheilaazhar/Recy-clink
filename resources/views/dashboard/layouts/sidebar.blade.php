@@ -14,7 +14,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('') ? 'active' : '' }}" href="">
+          <a class="nav-link {{ Request::is('dashboard/pesanan*') ? 'active' : '' }}" href="/dashboard/pesanan">
             <span data-feather="dollar-sign"></span>
             Data Penjualan
           </a>

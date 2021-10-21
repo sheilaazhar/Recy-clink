@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardProdukController;
+use App\Http\Controllers\DashboardPenjualanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfilController;
 
@@ -68,6 +69,8 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
     Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('admin');
     Route::resource('/dashboard/produk', DashboardProdukController::class)->middleware('admin');
+    Route::resource('/dashboard/pesanan', DashboardPenjualanController::class)->middleware('admin');
+    Route::get('/dashboard/pesanan/{id}/update', [DashboardPenjualanController::class, 'update'])->middleware('admin');
 });
 
     Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

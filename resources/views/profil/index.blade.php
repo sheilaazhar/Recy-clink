@@ -49,17 +49,23 @@
                             <td>{{ $pesanan->tanggal }}</td>
                             <td>{{ $pesanan->total_produk }} pcs</td>
                             <td align="left">Rp{{ number_format($pesanan->total_harga) }}</td>
-                            <td></td>
+                            <td>
+                                @if($pesanan->status_kirim == 'Menunggu dikirim')
+                                <span class="badge badge-pill badge-warning">{{ $pesanan->status_kirim }}</span>
+                                @else
+                                <span class="badge badge-pill badge-success">{{ $pesanan->status_kirim }}</span>
+                                @endif
+                            </td>
                             <td><a href="/profil/pesanan/{{ $pesanan->id }}" class="badge bg-info">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+                <small class="d-block text-center mt-3"><a href="/produk">Beli produk RECY-CLINK! lainnya sekarang >>></a></small>
                 @else
                 <h3>ANDA BELUM PERNAH MEMBELI PRODUK RECY-CLINK!</h3>
                 <small class="d-block text-center mt-3"><a href="/produk">Beli produk RECY-CLINK! sekarang >>></a></small>
                 @endif
-                <small class="d-block text-center mt-3"><a href="/produk">Beli produk RECY-CLINK! lainnya sekarang >>></a></small>
             </div>
         </div>
     </div>

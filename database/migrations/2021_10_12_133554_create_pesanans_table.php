@@ -20,6 +20,7 @@ class CreatePesanansTable extends Migration
             $table->integer('total_produk');
             $table->integer('total_harga');
             $table->string('status');
+            $table->string('status_kirim')->default('Menunggu dikirim');
             $table->timestamps();
         });
     }

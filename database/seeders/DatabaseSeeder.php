@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
             'nama_kecamatan'=>'Bandung Kidul'
          ]);
         Kecamatan::create([
-            'nama_kecamatan'=>'Buahbatu'
+            'nama_kecamatan'=>'Buah batu'
          ]);
         Kecamatan::create([
             'nama_kecamatan'=>'Rancasari'
