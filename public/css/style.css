@@ -126,6 +126,11 @@ footer {
     border: solid 1px #75C892 !Important;
 }
 
+article {
+  opacity: 70%;
+  font-size:small;
+}
+
 /*Profile*/
 
 .profile{

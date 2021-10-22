@@ -27,8 +27,7 @@
         @endif
         <div class="card-body text-center">
             <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug}}" class="text-decoration-none text-dark">{{ $posts[0]->title }}</a></h3>
-            <p>
-                <small class="text-muted"> {{ $posts[0]->created_at->diffForHumans() }}</small></p>
+            <p><small class="text-muted"> {{ $posts[0]->created_at->diffForHumans() }}</small></p>
             <p class="card-text">{{ $posts[0]->excerpt }}</p>
             <a href="/posts/{{ $posts[0]->slug}}" class="text-decoration-none btn btn-success">Read More</a>
         </div>
