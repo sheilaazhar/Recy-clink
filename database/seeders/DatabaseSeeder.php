@@ -42,6 +42,30 @@ class DatabaseSeeder extends Seeder
            'password'=>bcrypt('password')
         ]);
 
+        User::create([
+           'name'=>'Meira',
+           'username'=>'meiradwiana',
+           'email'=>'meira@gmail.com',
+           'usertype'=>0,
+           'jk'=>'Perempuan',
+           'phone'=>'081234567100',
+           'kecamatan_id'=>10,
+           'address'=>'Cimahi',
+           'password'=>bcrypt('password')
+        ]);
+
+        User::create([
+           'name'=>'Anne',
+           'username'=>'anneaudistya',
+           'email'=>'anne@gmail.com',
+           'usertype'=>0,
+           'jk'=>'Perempuan',
+           'phone'=>'081234569100',
+           'kecamatan_id'=>5,
+           'address'=>'Bogor',
+           'password'=>bcrypt('password')
+        ]);
+
         //User::factory(3)->create();
 
         Post::factory(20)->create();

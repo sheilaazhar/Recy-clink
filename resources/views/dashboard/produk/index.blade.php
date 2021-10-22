@@ -29,7 +29,7 @@
         @foreach ($produks as $produk)
         <tr>
           <td>{{ $loop->iteration }}</td>
-          <td><img src="{{ asset('storage/' . $produk->image) }}" alt="{{ $produk->nama_produk }}"></td>
+          <td><img src="{{ asset('storage/' . $produk->image) }}" alt="{{ $produk->nama_produk }}" width="200" height="200"></td>
           <td>{{ $produk->nama_produk }}</td>
           <td>{{ $produk->bahan }}</td>
           <td>Rp{{ number_format($produk->harga) }}</td>

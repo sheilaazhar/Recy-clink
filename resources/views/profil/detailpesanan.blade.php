@@ -60,7 +60,7 @@
                     @foreach($pesanandetails as $pesanandetail)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td><img src="{{ asset('storage/' . $pesanandetail->produk->image) }}" alt="{{ $pesanandetail->produk->nama_produk }}"></td>
+                        <td><img src="{{ asset('storage/' . $pesanandetail->produk->image) }}" alt="{{ $pesanandetail->produk->nama_produk }}" width="200" height="200"></td>
                         <td>{{ $pesanandetail->produk->nama_produk }}</td>
                         <td>{{ $pesanandetail->jumlah }} pcs</td>
                         <td align="left">Rp{{ number_format($pesanandetail->produk->harga) }}</td>

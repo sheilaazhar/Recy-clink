@@ -20,7 +20,7 @@
     <div class="card mb-3">
         @if ($posts[0]->image)
         <div style="max-height:400px; overflow:hidden;">
-        <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->title }}" class="img-fluid">
+        <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->title }}" class="img-fluid" style="display:block; margin:auto;">
         </div>
         @else
         <img src="https://source.unsplash.com/1200x400?" class="card-img-top px-4 mt-2" alt="{{ $posts[0]->title }}">

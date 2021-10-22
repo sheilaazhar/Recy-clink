@@ -12,7 +12,7 @@
   @endif
 
   <div class="table-responsive col-lg-8">
-    <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create New Post</a>
+    <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Tambah Artikel Baru</a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -32,7 +32,7 @@
             <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
               @method('delete')
               @csrf
-              <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>
+              <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda yakin ingin menghapusnya?')"><span data-feather="x-circle"></span></button>
             </form>
           </td>
         </tr>

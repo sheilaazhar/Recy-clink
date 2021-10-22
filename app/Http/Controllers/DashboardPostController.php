@@ -123,7 +123,7 @@ class DashboardPostController extends Controller
         Post::where('id', $post->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/posts')->with('success', 'Post has been updated!');
+        return redirect('/dashboard/posts')->with('success', 'Artikel berhasil diperbarui!');
     }
 
     /**
@@ -140,7 +140,7 @@ class DashboardPostController extends Controller
         
         Post::destroy($post->id);
 
-        return redirect('/dashboard/posts')->with('success', 'Post has been deleted!');
+        return redirect('/dashboard/posts')->with('success', 'Artikel berhasil dihapus!');
     }
 
     public function checkSlug(Request $request)

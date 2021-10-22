@@ -10,7 +10,7 @@
       @foreach($produks as $produk)
       <div class="col-md-3 mt-5">
           <div class="card shadow-sm">
-              <img class="card-img-top img-fluid pt-3 px-4" src="{{ asset('storage/' . $produk->image) }}" alt="{{ $produk->nama_produk }}">
+              <img class="card-img-top img-fluid pt-3 px-4" src="{{ asset('storage/' . $produk->image) }}" alt="{{ $produk->nama_produk }}" style="height: 200px;">
               <div class="card-body">
                 <small class="text-muted mb-1">Stok : {{ $produk->stok }}</small>
                 <h5 class="card-title text-center">{{ $produk->nama_produk }}</h5>

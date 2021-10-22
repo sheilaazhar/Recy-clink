@@ -5,6 +5,7 @@
         <div class="row justify-content-center mt-5 mb-5" >
             <div class="col-md-8">
                 <h1 class="mb-3 text-center">{{ $post->title }}</h1>
+                <p><small class="text-muted"> {{ $post->created_at->diffForHumans() }}</small></p>
                 
                 @if ($post->image)
                 <div style="max-height:400px; overflow:hidden;">

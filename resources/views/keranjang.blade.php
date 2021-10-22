@@ -38,7 +38,7 @@
                             </form>
                         </td>
                         <td>{{ $no++ }}</td>
-                        <td><img src="{{ asset('storage/' . $pesanan_detail->produk->image) }}" alt="{{ $pesanan_detail->produk->nama_produk }}"></td>
+                        <td><img src="{{ asset('storage/' . $pesanan_detail->produk->image) }}" alt="{{ $pesanan_detail->produk->nama_produk }}" width="200" height="200"></td>
                         <td>{{ $pesanan_detail->produk->nama_produk }}</td>
                         <td>{{ $pesanan_detail->jumlah }} pcs</td>
                         <td>Rp{{ number_format($pesanan_detail->produk->harga) }}</td>
