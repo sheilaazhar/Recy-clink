@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AmbilSampah;
-use App\Models\Kecamatan;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 
-class AmbilSampahController extends Controller
+class DashboardPengumpulanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +14,9 @@ class AmbilSampahController extends Controller
      */
     public function index()
     {
-        $ambilsampah = new AmbilSampah();
-        $tanggal = Carbon::today()->toDateString();
-        $ambilsampah->tanggal = $tanggal;
-        $ambilsampah->user_id = Auth::user()->id;
-        return view('pengumpulan', compact('ambilsampah'), [
-            "title" => "Sampah",
-            'active'=> 'sampah',
-            'kecamatans' => Kecamatan::all(),
-            'user' => User::where('id', Auth::user()->id)->first()
-         ]);
+        return view('dashboard.pengumpulan.index', [
+            'ambilsampahs' => AmbilSampah::all()
+        ]);
     }
 
     /**
@@ -48,29 +37,20 @@ class AmbilSampahController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'jenis_sampah' => 'required|max:255',
-            'berat' => 'required',
-            'kecamatan_id' => 'required',
-            'address' => 'required|max:255',
-        ]);
-
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['tanggal'] = Carbon::today()->toDateString();
-        AmbilSampah::create($validatedData);
-
-        return redirect('profil/pengumpulan')->with('success', 'Permintaan berhasil diajukan!');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AmbilSampah  $ambilSampah
+     * @param  \App\Models\AmbilSampahController  $ambilSampah
      * @return \Illuminate\Http\Response
      */
-    public function show(AmbilSampah $ambilSampah)
+    public function show(AmbilSampah $ambilsampah)
     {
-        //
+        return view('dashboard.pengumpulan.detail', [
+            'ambilsampahs' => AmbilSampah::where('ambilsampah_id', $ambilsampah->id)->get()
+        ]);
     }
 
     /**

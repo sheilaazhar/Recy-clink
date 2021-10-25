@@ -8,9 +8,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('') ? 'active' : '' }}" href="">
+          <a class="nav-link {{ Request::is('') ? 'active' : '' }}" href="/dashboard/pengumpulan">
             <span data-feather="trash-2"></span>
-            Data Permintaan
+            Data Pengumpulan
           </a>
         </li>
         <li class="nav-item">

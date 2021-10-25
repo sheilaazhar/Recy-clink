@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AmbilSampah;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\PesananDetail;
@@ -24,6 +25,7 @@ class ProfilController extends Controller
             'active'=> 'profil',
             'user' => User::where('id', Auth::user()->id)->first(),
             'pesanans' => Pesanan::where('user_id', auth()->user()->id)->where('status',1)->get(),
+            'ambilsampahs' => AmbilSampah::where('user_id', auth()->user()->id)->latest()->take(2)->get(),
         ]);
     }
 
@@ -34,6 +36,16 @@ class ProfilController extends Controller
         return view('profil.detailpesanan', compact('pesanan', 'pesanandetails'), [
             "title" => "DetailPesanan",
             'active'=> 'detailpesanan'
+        ]);
+    }
+
+    public function pengumpulan()
+    {
+        return view('profil.pengumpulan', [
+            "title" => "pengumpulan",
+            'active'=> 'pengumpulan',
+            'user' => User::where('id', Auth::user()->id)->first(),
+            'ambilsampahs'=>AmbilSampah::where('user_id', auth()->user()->id)->get()
         ]);
     }
 

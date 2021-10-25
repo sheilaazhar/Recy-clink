@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardProdukController;
 use App\Http\Controllers\DashboardPenjualanController;
+use App\Http\Controllers\DashboardPengumpulanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AmbilSampahController;
@@ -50,6 +51,7 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::get('/profil/edit', [ProfilController::class, 'edit']);
     Route::post('/profil', [ProfilController::class, 'update']);
     Route::get('/profil/pesanan/{id}', [ProfilController::class, 'detailpesanan']);
+    Route::get('/profil/pengumpulan', [ProfilController::class, 'pengumpulan']);
 
     Route::post('pesan/{id}', [ProdukController::class, 'pesan']);
     Route::get('/keranjang', [ProdukController::class, 'keranjang']);
@@ -64,6 +66,7 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::get('/produk', [ProdukController::class, 'index']);
 
     Route::get('/sampah', [AmbilSampahController::class, 'index']);
+    Route::post('/sampah/pengumpulan', [AmbilSampahController::class, 'store']);
     
     Route::get('/dashboard', function(){
         return view('dashboard.index');
@@ -73,6 +76,7 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('admin');
     Route::resource('/dashboard/produk', DashboardProdukController::class)->middleware('admin');
     Route::resource('/dashboard/pesanan', DashboardPenjualanController::class)->middleware('admin');
+    Route::resource('/dashboard/pengumpulan', DashboardPengumpulanController::class)->middleware('admin');
     Route::get('/dashboard/pesanan/{id}/update', [DashboardPenjualanController::class, 'update'])->middleware('admin');
 });
 

@@ -7,13 +7,13 @@
     <div class="col-md-2"></div>
     <div class="col-md-3 mt-5 label">
         <h4 class="mb-4 mt-1">Tanggal</h4>
-        <h4 class="mb-4 mt-1">Jenis Kelamin</h4>
+        <h4 class="mb-4 mt-1">Jenis Sampah</h4>
         <h4 class="mb-4 mt-1">Berat Sampah</h4>
         <h4 class="mb-4 mt-1">Alamat Pengambilan</h4>
         </div>
     <div class="col-md-7 mt-5">
     <div class="col-lg-8">
-    <form action="/" method="post">
+    <form action="/sampah/pengumpulan" method="post">
         @csrf
         <div class="mb-3">
         <input type="text" name="tanggal" class="form-control rounded-top @error('tanggal') is-invalid @enderror" id="tanggal" placeholder="Tanggal Pengambilan" required value="{{ old('tanggal', $ambilsampah->tanggal) }}" disabled>

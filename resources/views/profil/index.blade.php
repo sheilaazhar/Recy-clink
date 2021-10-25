@@ -24,7 +24,29 @@
             <a href="/profil/edit" class="btn btn-success">Edit Profil</a>
         </div>
     </div>
-    
+
+    <h4>Riwayat Pengumpulan Sampah <img src="./img/garis.png" class="garis"></h4>
+        <div class="row">
+            <div class="col-md-12 mt-2">
+                @if ($ambilsampahs->count())
+                <table class="table table-striped">
+                        @foreach($ambilsampahs as $ambilsampah)
+                        <tr>
+                            <td>{{ $ambilsampah->tanggal }}</td>
+                            <td>{{ $ambilsampah->jenis_sampah }}</td>
+                            <td>{{ $ambilsampah->berat }} kg</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <small class="d-block text-center mt-3"><a href="/profil/pengumpulan">Lihat riwayat lengkap >>></a></small>
+                @else
+                <h3>ANDA BELUM PERNAH MENGUMPULKAN SAMPAH!</h3>
+                <small class="d-block text-center mt-3"><a href="/produk">Ajukan Permintaan Pengumpulan Sampah Sekarang >>></a></small>
+                @endif
+            </div>
+        </div>
+
     <div class="pembelian">
         <h4>Riwayat Pembelian Produk <img src="./img/garis.png" class="garis"></h4>
         <div class="row">
