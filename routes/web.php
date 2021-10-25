@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardProdukController;
 use App\Http\Controllers\DashboardPenjualanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\AmbilSampahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,8 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::get('posts/{post:slug}', [PostController::class, 'show']);
     
     Route::get('/produk', [ProdukController::class, 'index']);
+
+    Route::get('/sampah', [AmbilSampahController::class, 'index']);
     
     Route::get('/dashboard', function(){
         return view('dashboard.index');
