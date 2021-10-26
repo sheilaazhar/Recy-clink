@@ -16,8 +16,9 @@
                         <td>{{ $ambilsampah->tanggal }}</td>
                         <td>{{ $ambilsampah->jenis_sampah }}</td>
                         <td>{{ $ambilsampah->berat }} kg</td>
-                        <td>{{ $ambilsampah->user->kecamatan->nama_kecamatan }}</td>
+                        <td>{{ $ambilsampah->kecamatan->nama_kecamatan }}</td>
                         <td>{{ $ambilsampah->address }}</td>
+                        <td>{{ $ambilsampah->status }}</td>
                     </tr>
                     @endforeach
                 </tbody>

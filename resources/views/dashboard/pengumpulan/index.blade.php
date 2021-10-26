@@ -11,32 +11,39 @@
   </div>
   @endif
 
-  <div class="table-responsive col-lg-8">
+  <div class="table-responsive col-lg-10">
     <table class="table table-striped table-sm">
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">Tanggal</th>
+          <th scope="col">Nama</th>
           <th scope="col">Username</th>
-          <th scope="col">Tanggal Permintaan</th>
+          <th scope="col">No. Hp</th>
           <th scope="col">Jenis Sampah</th>
           <th scope="col">Berat Sampah</th>
+          <th scope="col">Alamat Pengambilan</th>
           <th scope="col">Status</th>
-          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         @foreach ($ambilsampahs as $ambilsampah)
         <tr>
           <td>{{ $loop->iteration }}</td>
-          <td>{{ $ambilsampah->user->username }}</td>
           <td>{{ $ambilsampah->tanggal }}</td>
+          <td>{{ $ambilsampah->user->name }}</td>
+          <td>{{ $ambilsampah->user->username }}</td>
+          <td>{{ $ambilsampah->user->phone }}</td>
           <td>{{ $ambilsampah->jenis_sampah }}</td>
           <td>{{ $ambilsampah->berat }} kg</td>
+          <td>{{ $ambilsampah->address }}, {{ $ambilsampah->kecamatan->nama_kecamatan }}</td>
           <td>
-            
-          </td>
-          <td>
-            <a href="/dashboard/pengumpulan/{{ $ambilsampah->id }}" class="badge bg-info"><span data-feather="eye"></span></a>
+            @if($ambilsampah->status == 'Menunggu konfirmasi')
+            <a href="/dashboard/pengumpulan/{{ $ambilsampah->id }}/setuju" class="badge bg-primary" onclick="return confirm('Apakah yakin ingin menerima permintaan?')"><span data-feather="check"></span></a>
+            <a href="/dashboard/pengumpulan/{{ $ambilsampah->id }}/tolak" class="badge bg-danger" onclick="return confirm('Apakah yakin ingin menolak permintaan?')"><span data-feather="x-circle"></span></a>
+            @else
+            <span>{{ $ambilsampah->status }}</span>
+            @endif
           </td>
         </tr>
         @endforeach

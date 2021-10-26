@@ -15,4 +15,9 @@ class Kecamatan extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function ambilsampah()
+    {
+        return $this->hasMany(AmbilSampah::class);
+    }
 }

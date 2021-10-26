@@ -78,6 +78,8 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::resource('/dashboard/pesanan', DashboardPenjualanController::class)->middleware('admin');
     Route::resource('/dashboard/pengumpulan', DashboardPengumpulanController::class)->middleware('admin');
     Route::get('/dashboard/pesanan/{id}/update', [DashboardPenjualanController::class, 'update'])->middleware('admin');
+    Route::get('/dashboard/pengumpulan/{id}/setuju', [DashboardPengumpulanController::class, 'setuju'])->middleware('admin');
+    Route::get('/dashboard/pengumpulan/{id}/tolak', [DashboardPengumpulanController::class, 'tolak'])->middleware('admin');
 });
 
     Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

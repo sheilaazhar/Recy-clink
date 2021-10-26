@@ -15,4 +15,9 @@ class AmbilSampah extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class);
+    }
 }

@@ -19,6 +19,24 @@ class DashboardPengumpulanController extends Controller
         ]);
     }
 
+    public function setuju($id)
+    {
+        $ambilsampah = AmbilSampah::find($id);
+        $ambilsampah->status="Disetujui";
+        $ambilsampah->save();
+
+        return redirect()->back();
+    }
+
+    public function tolak($id)
+    {
+        $ambilsampah = AmbilSampah::find($id);
+        $ambilsampah->status="Ditolak";
+        $ambilsampah->save();
+
+        return redirect()->back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -43,14 +61,12 @@ class DashboardPengumpulanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AmbilSampahController  $ambilSampah
+     * @param  \App\Models\AmbilSampah  $ambilSampah
      * @return \Illuminate\Http\Response
      */
-    public function show(AmbilSampah $ambilsampah)
+    public function show(AmbilSampah $ambilSampah)
     {
-        return view('dashboard.pengumpulan.detail', [
-            'ambilsampahs' => AmbilSampah::where('ambilsampah_id', $ambilsampah->id)->get()
-        ]);
+        //
     }
 
     /**
