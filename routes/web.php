@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardPengumpulanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AmbilSampahController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,9 +69,7 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::get('/sampah', [AmbilSampahController::class, 'index']);
     Route::post('/sampah/pengumpulan', [AmbilSampahController::class, 'store']);
     
-    Route::get('/dashboard', function(){
-        return view('dashboard.index');
-    })->middleware('admin');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('admin');
     
     Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
     Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('admin');
