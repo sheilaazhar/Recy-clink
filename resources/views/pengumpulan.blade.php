@@ -22,7 +22,11 @@
         @enderror
         </div>
         <div class="mb-3">
-        <input type="text" name="jenis_sampah" class="form-control @error('jenis_sampah') is-invalid @enderror" id="jenis_sampah" placeholder="Contoh : plastik/kertas/kaleng" required value="{{ old('jenis_sampah') }}">
+        <select class="form-select" name="jenis_sampah" id="jenis_sampah">
+                <option value="plastik">Plastik</option>
+                <option value="kain">Kain</option>
+                <option value="kaleng">Kaleng</option>
+        </select>
         @error('jenis_sampah')
         <div class="invalid-feedback">{{ $message }}</div>
         @enderror
