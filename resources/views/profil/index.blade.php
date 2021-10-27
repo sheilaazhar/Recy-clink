@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <h4>Riwayat Pengumpulan Sampah <img src="./img/garis.png" class="garis"></h4>
+    <h4 class="mt-4">Riwayat Pengumpulan Sampah <img src="./img/garis.png" class="garis text-right"></h4>
         <div class="row">
             <div class="col-md-12 mt-2">
                 @if ($ambilsampahs->count())
@@ -48,7 +48,7 @@
         </div>
 
     <div class="pembelian">
-        <h4>Riwayat Pembelian Produk <img src="./img/garis.png" class="garis"></h4>
+        <h4>Riwayat Pembelian Produk <img src="./img/garis.png" class="garis align-items-end"></h4>
         <div class="row">
             <div class="col-md-12 mt-2">
                 @if ($pesanans->count())

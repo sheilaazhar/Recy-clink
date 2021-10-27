@@ -3,9 +3,9 @@
 @section('container')
 <div class="container">
     <h1 class="h3 mb-3 fw-normal text-center mt-3">Form Permintaan Buang Sampah</h1>
-    <div class="row justify-content-center">
+    <div class="row">
     <div class="col-md-2"></div>
-    <div class="col-md-3 mt-5 label">
+    <div class="col-md-3 mt-5 text-left">
         <h4 class="mb-4 mt-1">Tanggal</h4>
         <h4 class="mb-4 mt-1">Jenis Sampah</h4>
         <h4 class="mb-4 mt-1">Berat Sampah</h4>
