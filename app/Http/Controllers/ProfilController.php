@@ -45,7 +45,7 @@ class ProfilController extends Controller
             "title" => "pengumpulan",
             'active'=> 'pengumpulan',
             'user' => User::where('id', Auth::user()->id)->first(),
-            'ambilsampahs'=>AmbilSampah::where('user_id', auth()->user()->id)->get()
+            'ambilsampahs'=>AmbilSampah::where('user_id', auth()->user()->id)->latest()->get()
         ]);
     }
 

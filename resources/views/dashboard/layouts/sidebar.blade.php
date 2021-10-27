@@ -8,7 +8,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('') ? 'active' : '' }}" href="/dashboard/pengumpulan">
+          <a class="nav-link {{ Request::is('dashboard/pengumpulan*') ? 'active' : '' }}" href="/dashboard/pengumpulan">
             <span data-feather="trash-2"></span>
             Data Pengumpulan
           </a>

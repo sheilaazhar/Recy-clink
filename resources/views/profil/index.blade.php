@@ -35,6 +35,7 @@
                             <td>{{ $ambilsampah->tanggal }}</td>
                             <td>{{ $ambilsampah->jenis_sampah }}</td>
                             <td>{{ $ambilsampah->berat }} kg</td>
+                            <td>{{ $ambilsampah->status }}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -42,7 +43,7 @@
                 <small class="d-block text-center mt-3"><a href="/profil/pengumpulan">Lihat riwayat lengkap >>></a></small>
                 @else
                 <h3>ANDA BELUM PERNAH MENGUMPULKAN SAMPAH!</h3>
-                <small class="d-block text-center mt-3"><a href="/produk">Ajukan Permintaan Pengumpulan Sampah Sekarang >>></a></small>
+                <small class="d-block text-center mt-3"><a href="/sampah">Ajukan Permintaan Pengumpulan Sampah Sekarang >>></a></small>
                 @endif
             </div>
         </div>

@@ -21,6 +21,7 @@ class CreateAmbilSampahsTable extends Migration
             $table->string('berat');
             $table->foreignId('kecamatan_id');
             $table->string('address');
+            $table->string('status')->default('Menunggu konfirmasi');
             $table->timestamps();
         });
     }
