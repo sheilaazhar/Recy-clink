@@ -23,9 +23,9 @@
         </div>
         <div class="mb-3">
         <select class="form-select" name="jenis_sampah" id="jenis_sampah">
-                <option value="plastik">Plastik</option>
-                <option value="kain">Kain</option>
-                <option value="kaleng">Kaleng</option>
+                <option value="Plastik">Plastik</option>
+                <option value="Kain">Kain</option>
+                <option value="Kaleng">Kaleng</option>
         </select>
         @error('jenis_sampah')
         <div class="invalid-feedback">{{ $message }}</div>

@@ -32,9 +32,9 @@
                     @foreach($ambilsampahs as $ambilsampah)
                     <div class="col-md-3 mt-5">
                         <div class="card shadow-sm">
-                            @if($ambilsampah->jenis_sampah == 'Plastik' && 'plastik')
+                            @if ($ambilsampah->jenis_sampah=="Plastik")
                                 <img class="card-img-top img-fluid pt-3 px-4" src="./img/plastic.png" alt="plastik" style="height: 200px;">
-                            @elseif($ambilsampah->jenis_sampah == 'Kain' && 'kain')
+                            @elseif($ambilsampah->jenis_sampah=="Kain")
                                 <img class="card-img-top img-fluid pt-3 px-4" src="./img/kain.png" alt="kain" style="height: 200px;">
                             @else
                                 <img class="card-img-top img-fluid pt-3 px-4" src="./img/kaleng.png" alt="kaleng" style="height: 200px;">
