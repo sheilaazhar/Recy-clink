@@ -192,3 +192,10 @@ color: #18A57D;
 .list-produk .card .card-text h5{
 margin-top: -5px;
 }
+
+.gambar{
+  background-image: url(../img/buangsampah.png);
+  background-position: bottom;
+  background-size: 470px;
+  background-repeat: no-repeat;
+}
