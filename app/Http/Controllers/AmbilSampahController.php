@@ -59,7 +59,7 @@ class AmbilSampahController extends Controller
         $validatedData['tanggal'] = Carbon::today()->toDateString();
         AmbilSampah::create($validatedData);
 
-        return redirect('profil/pengumpulan')->with('success', 'Permintaan berhasil diajukan!');
+        return redirect('profil/pengumpulan')->with('success', 'Permintaan berhasil diajukan! Harap tunggu konfirmasi dari pihak kami, dan selanjutnya pihak kami akan menghubungi melalui nomor telepon Anda.');
     }
 
     /**

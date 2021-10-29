@@ -77,7 +77,7 @@
         </div>
     </div>
     <div class="col-md-12 mt-3 justify-content-md-end">
-        <a href="/produk"><i class="bi bi-arrow-left"></i> Kembali</a>
+        <a href="#" onclick="history.back();"><i class="bi bi-arrow-left"></i> Kembali</a>
     </div>
 </div>
 

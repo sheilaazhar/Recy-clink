@@ -24,7 +24,7 @@ class ProfilController extends Controller
             "title" => "Profil",
             'active'=> 'profil',
             'user' => User::where('id', Auth::user()->id)->first(),
-            'pesanans' => Pesanan::where('user_id', auth()->user()->id)->where('status',1)->get(),
+            'pesanans' => Pesanan::where('user_id', auth()->user()->id)->where('status',1)->latest()->get(),
             'ambilsampahs' => AmbilSampah::where('user_id', auth()->user()->id)->latest()->take(2)->get(),
         ]);
     }

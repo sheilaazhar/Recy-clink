@@ -2,6 +2,11 @@
 
 @section('container')
 <div class="container">
+    @if(session()->has('success'))
+        <div class="alert alert-success col-lg-12" role="alert">
+        {{ session('success') }}
+        </div>
+    @endif
     <h1 class='mt-3 mb-4'>Riwayat Pengumpulan</h1>
     <div class="col-md-12 mt-2">
     </div>
