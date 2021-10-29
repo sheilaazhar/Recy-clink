@@ -7,32 +7,32 @@
         {{ session('success') }}
         </div>
     @endif
-    <h1 class='mt-3 mb-4'>Riwayat Pengumpulan</h1>
+    <h1 class='mt-3 mb-4 text-center'>Riwayat Pengumpulan</h1>
     <div class="col-md-12 mt-2">
     </div>
-    <div class="table-responsive col-lg-3">
-      </div>
-    <div class="row">
-        <div class="col-md-12 mt-4">
-            <table class="table table-border">
-                <tbody>
-                    @foreach($ambilsampahs as $ambilsampah)
-                    <tr>
-                        <td>{{ $ambilsampah->tanggal }}</td>
-                        <td>{{ $ambilsampah->jenis_sampah }}</td>
-                        <td>{{ $ambilsampah->berat }} kg</td>
-                        <td>{{ $ambilsampah->kecamatan->nama_kecamatan }}</td>
-                        <td>{{ $ambilsampah->address }}</td>
-                        <td>{{ $ambilsampah->status }}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-md-12 mt-3 justify-content-md-end">
+
+    <div class="col-md-12 mt-2 justify-content-md-end">
         <a href="/profil"><i class="bi bi-arrow-left"></i> Kembali</a>
     </div>
+
+    @foreach($ambilsampahs as $ambilsampah)
+    <div class="card card-pengumpulan mb-2 mt-3">
+        <h5 class="card-header">
+            @if($ambilsampah->status == 'Disetujui')
+            <small class="text-success">Permintaan {{ $ambilsampah->status }}.</small>
+            @elseif ($ambilsampah->status == 'Ditolak')
+            <small class="text-danger">Permintaan {{ $ambilsampah->status }}.</small>
+            @endif
+        </h5>
+        <div class="card-body">
+          <p class="card-title text-muted">Jenis Barang: </p>
+          <h5 class="card-text">{{ $ambilsampah->jenis_sampah }} , {{ $ambilsampah->berat }} kilogram</h5>
+          <p class="card-text"><i class="bi bi-geo-alt me-2"></i>{{ $ambilsampah->address }} , Kecamatan {{ $ambilsampah->kecamatan->nama_kecamatan }}</p>
+          <small>{{ $ambilsampah->tanggal }}</small>
+        </div>
+    </div>
+    @endforeach
+
 </div>
 
 @endsection

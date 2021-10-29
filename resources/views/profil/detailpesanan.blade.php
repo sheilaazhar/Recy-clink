@@ -4,14 +4,15 @@
 <div class="container">
     <h1 class='mt-5 mb-4'>Detail Pesanan Saya</h1>
     <div class="col-md-12 mt-2">
-    <div class="card-body" style="background-color: #FFC0C0">
-        @if($pesanan->status_kirim == "Menunggu dikirim")
-        <h6>Pesanan Anda berhasil di checkout pada <strong>{{ $pesanan->tanggal }}</strong>. Silakan tunggu sesaat lagi pihak kami akan menghubungi Anda melalui nomor telepon.</h6>
-        @else
-        <h6>Pesanan Anda telah selesai, produk sudah dikirim.</h6>
-        @endif
+        <div class="card-body" style="background-color: #FFC0C0">
+            @if($pesanan->status_kirim == "Menunggu dikirim")
+            <h6>Pesanan Anda berhasil di checkout pada <strong>{{ $pesanan->tanggal }}</strong>. Silakan tunggu sesaat lagi pihak kami akan menghubungi Anda melalui nomor telepon.</h6>
+            @else
+            <h6>Pesanan Anda telah selesai, produk sudah dikirim.</h6>
+            @endif
+        </div>
     </div>
-    </div>
+
     <div class="table-responsive col-lg-3">
         <table class="table table-borderless">
         <tbody>
