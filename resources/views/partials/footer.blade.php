@@ -23,7 +23,7 @@
             <img class="img-fluid" src="./img/logo.png" alt="Logo">
           </div>
           <p>
-            Recy-clink <br> Jl.  ...... Kota Bandung
+            Recy-clink <br> Jl. Jendral Sudirman No.123, Kec. Antapani Kota Bandung
           </p>
         </div>
         <!-- Grid column -->
@@ -35,19 +35,19 @@
             Layanan
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pengumpulan Barang Bekas</a>
+            <a href="/sampah" class="text-reset {{ ($active === "sampah") ? 'active' : '' }}">Pengumpulan Barang Bekas</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Produk Hasil Daur Ulang</a>
+            <a href="/produk" class="text-reset {{ ($active === "produk") ? 'active' : '' }}">Produk Hasil Daur Ulang</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Artikel</a>
+            <a href="/posts" class="text-reset {{ ($active === "posts") ? 'active' : '' }}">Artikel</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Help</a>
+            <a href="/help" class="text-reset {{ ($active === "help") ? 'active' : '' }}">Help</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">About Us</a>
+            <a href="/about" class="text-reset {{ ($active === "about") ? 'active' : '' }}">About Us</a>
           </p>
         </div>
         <!-- Grid column -->
