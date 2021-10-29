@@ -22,6 +22,8 @@
             <small class="text-success">Permintaan {{ $ambilsampah->status }}.</small>
             @elseif ($ambilsampah->status == 'Ditolak')
             <small class="text-danger">Permintaan {{ $ambilsampah->status }}.</small>
+            @elseif ($ambilsampah->status == 'Menunggu konfirmasi')
+            <small>Permintaan {{ $ambilsampah->status }}.</small>
             @endif
         </h5>
         <div class="card-body">
