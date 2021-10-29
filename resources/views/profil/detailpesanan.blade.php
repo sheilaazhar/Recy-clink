@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="container">
-    <h1 class='mt-3 mb-4'>Detail Pesanan Saya</h1>
+    <h1 class='mt-5 mb-4'>Detail Pesanan Saya</h1>
     <div class="col-md-12 mt-2">
     <div class="card-body" style="background-color: #FFC0C0">
         @if($pesanan->status_kirim == "Menunggu dikirim")
