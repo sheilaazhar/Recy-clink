@@ -27,7 +27,7 @@
 
     <h4 class="mt-4">Riwayat Pengumpulan Sampah <img src="./img/garis.png" class="garis text-right"></h4>
         <div class="list-produk bg-trasparent my-4 px-3">
-            <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+            <div class="row ">
                 @if ($ambilsampahs->count())
                     @foreach($ambilsampahs as $ambilsampah)
                     <div class="col-md-3 mt-5">
