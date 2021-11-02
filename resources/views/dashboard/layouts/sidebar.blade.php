@@ -38,10 +38,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" >
-            <span data-feather="log-out"></span>
-            Logout
-          </a>
+          <form action="/logout" method="post">
+            @csrf
+            <button type="submit" class="px-3 border-0" style="background-color: #52B69A"><span data-feather="log-out">Logout </span></button>
+          </form> 
         </li>
       </ul>
     </div>
