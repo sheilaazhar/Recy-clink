@@ -25,7 +25,6 @@
   </head>
   <body>
     
-@include('dashboard.layouts.header')
 
 <div class="container-fluid">
   <div class="row">

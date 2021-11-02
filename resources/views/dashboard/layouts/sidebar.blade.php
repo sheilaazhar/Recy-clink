@@ -1,6 +1,12 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
     <div class="position-sticky pt-3">
       <ul class="nav flex-column">
+        <li class="nav-item mb-5 mt-3">
+          <a class="nav-link">
+            <span data-feather="user"></span>
+            ADMIN RECY-CLINK!
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
             <span data-feather="home"></span>
@@ -31,6 +37,13 @@
             Data Artikel
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" >
+            <span data-feather="log-out"></span>
+            Logout
+          </a>
+        </li>
       </ul>
     </div>
+   
   </nav>
