@@ -52,6 +52,16 @@
                        Keranjang</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li>
+                    <?php
+                      $notif = \Illuminate\Notifications\DatabaseNotification::where('notifiable_id', Auth::user()->id)->where('read_at', NULL)->count();
+                    ?>
+                    <a class="dropdown-item" href="/notifikasi"><i class="bi bi-bell"></i>
+                      @if(!empty($notif))
+                      <span class="badge badge-danger">{{ $notif }}</span>
+                      @endif
+                       Notifikasi</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
                     <form action="/logout" method="post">
                       @csrf
                       <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>

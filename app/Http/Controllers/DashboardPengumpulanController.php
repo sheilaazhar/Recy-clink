@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\AmbilSampah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\DataNotification;
+use App\Models\User;
 
 class DashboardPengumpulanController extends Controller
 {
@@ -24,6 +27,8 @@ class DashboardPengumpulanController extends Controller
         $ambilsampah = AmbilSampah::find($id);
         $ambilsampah->status="Disetujui";
         $ambilsampah->save();
+        $user = User::where('id', $ambilsampah->user_id)->first();
+        Notification::send($user, new DataNotification($ambilsampah));
 
         return redirect()->back();
     }
@@ -33,6 +38,8 @@ class DashboardPengumpulanController extends Controller
         $ambilsampah = AmbilSampah::find($id);
         $ambilsampah->status="Ditolak";
         $ambilsampah->save();
+        $user = User::where('id', $ambilsampah->user_id)->first();
+        Notification::send($user, new DataNotification($ambilsampah));
 
         return redirect()->back();
     }

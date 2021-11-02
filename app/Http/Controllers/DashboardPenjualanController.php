@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Pesanan;
 use App\Models\PesananDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\BeliNotification;
+use App\Models\User;
 
 class DashboardPenjualanController extends Controller
 {
@@ -78,6 +81,8 @@ class DashboardPenjualanController extends Controller
         $pesanan = Pesanan::find($id);
         $pesanan->status_kirim="Sudah Dikirim";
         $pesanan->save();
+        $user = User::where('id', $pesanan->user_id)->first();
+        Notification::send($user, new BeliNotification($pesanan));
 
         return redirect()->back();
     }

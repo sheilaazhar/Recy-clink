@@ -12,6 +12,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AmbilSampahController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NotifikasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,9 @@ Route::group(['middleware' =>['auth','revalidate']], function (){
     Route::post('/profil', [ProfilController::class, 'update']);
     Route::get('/profil/pesanan/{id}', [ProfilController::class, 'detailpesanan']);
     Route::get('/profil/pengumpulan', [ProfilController::class, 'pengumpulan']);
+    Route::get('/notifikasi', [NotifikasiController::class, 'index']);
+    Route::get('/mark-as-read/{id}', [NotifikasiController::class, 'markNotification']);
+    #Route::get('/mark-as-read', 'NotifikasiController@markNotification')->name('markNotification');
 
     Route::post('pesan/{id}', [ProdukController::class, 'pesan']);
     Route::get('/keranjang', [ProdukController::class, 'keranjang']);
