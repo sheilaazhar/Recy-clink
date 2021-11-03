@@ -20,7 +20,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <div class="text-uppercase fw-bold mb-4">
-            <img class="img-fluid" src="./img/logo.png" alt="Logo">
+            <img class="img-fluid" src={{ asset("./img/logo.png") }} alt="Logo">
           </div>
           <p>
             Recy-clink <br> Jl. Jendral Sudirman No.123, Kec. Antapani Kota Bandung
@@ -59,11 +59,11 @@
             Hubungi Kami
           </h6>
           <p>
-            <i class="fas fa-envelope me-3"></i>
+            <i class="bi bi-envelope"></i>
             team@recyclink.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> 081234567890</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p><i class="bi bi-whatsapp"></i> 081234567890</p>
+          <p><i class="bi bi-telephone"></i> (022) 8899007</p>
         </div>
         <!-- Grid column -->
       </div>

@@ -16,7 +16,7 @@
         
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
-                    Untuk pengumpulan barang ada minimal pengumpulan dengan minimal berat 1 Kg/ barang yang akan di kumpulkan. Jika berat barang tidak sesuai dengan ketentuan permintaan pengumpulan barang akan di tolak oleh admin.
+                    Untuk pengumpulan barang ada minimal pengumpulan dengan minimal berat 1 Kg dan maksimal 5kg barang bekas yang akan di kumpulkan. Jika berat barang tidak sesuai dengan ketentuan permintaan pengumpulan barang akan di tolak oleh admin.
                 </div>
             </div>
             </div>
@@ -49,14 +49,14 @@
             </div>
             </div>
             <div class="card mb-3">
-                <div class="card-header" id="headingThree">
+                <div class="card-header" id="headingFour">
                     <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         Apakah warga di luar Kota Bandung dapat membeli Produk?
                     </button>
                     </h5>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                     <div class="card-body">
                         Untuk saat ini mohon maaf kami masih melayani hanya wilayah Kota Bandung.
                      </div>

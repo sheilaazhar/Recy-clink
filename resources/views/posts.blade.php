@@ -49,7 +49,7 @@
                       <h5 class="card-title">{{ $post->title }}</h5>
                       <p><small class="text-muted"> {{ $post->created_at->diffForHumans() }}</small></p>
                       <p class="card-text">{{ $post->excerpt }}</p>
-                      <a href="/posts/{{ $post->slug}}" class="btn btn-success">Read More</a>
+                      <a href="/posts/{{ $post->slug}}" class="btn btn-success">Selengkapnya</a>
                     </div>
                   </div>
             </div>

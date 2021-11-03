@@ -35,16 +35,13 @@
         </div>
         <div class="mb-3">
         <select class="form-select" name="berat" id="berat" style="width:400px">
+            <option value="0"> Kurang dari 1 kg</option>
             <option value="1">1 kg</option>
             <option value="2">2 kg</option>
             <option value="3">3 kg</option>
             <option value="4">4 kg</option>
             <option value="5">5 kg</option>
-            <option value="6">6 kg</option>
-            <option value="7">7 kg</option>
-            <option value="8">8 kg</option>
-            <option value="9">9 kg</option>
-            <option value="10">10 kg</option>
+            <option value="6"> Lebih dari 6 kg</option>
         </select>
         @error('berat')
         <div class="invalid-feedback">{{ $message }}</div>

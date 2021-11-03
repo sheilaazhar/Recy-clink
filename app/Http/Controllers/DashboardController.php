@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\AmbilSampah;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use App\Models\Pesanan;
 use App\Models\PesananDetail;
 
 class DashboardController extends Controller
 {
+
     public function index() {
-        return view('dashboard.index', [
+        $jualprodukCount = PesananDetail::select(DB::raw("Month(created_at)"))
+                    ->whereYear('created_at', date('Y'))
+                    ->groupBy(DB::raw("Month(created_at)"))
+                    ->sum('jumlah');
+
+        return view('dashboard.index', compact('jualprodukCount'), [
             'userCount' => User::count()-1,
             'peremCount' => User::where('jk', 'Perempuan')->count()-1,
             'lakiCount' => User::where('jk', 'Laki-Laki')->count(),
@@ -20,9 +27,9 @@ class DashboardController extends Controller
             'tolakCount' => AmbilSampah::where('status', 'Ditolak')->count(),
             'menungguCount' => AmbilSampah::where('status', 'Menunggu konfirmasi')->count(),
             'beratCount' => AmbilSampah::where('status', 'Disetujui')->sum('berat'),
-            'jualCount' => Pesanan::where('status_kirim', 'Dikirim')->count(),
+            'jualCount' => Pesanan::where('status_kirim', 'Sudah Dikirim')->count(),
             'tanggalCount' =>Pesanan::where('tanggal'),
-            'jualprodukCount' => PesananDetail::sum('jumlah'),
+            //'jualprodukCount' => PesananDetail::sum('jumlah')->groupBy('tanggal')->get()
             'priceCount' => Pesanan::sum('total_harga'),
             'tunggukirimCount' => Pesanan::where('status_kirim', 'Menunggu dikirim')->count(),
         ]);

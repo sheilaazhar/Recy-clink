@@ -38,10 +38,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <form id="myform" action="/logout" method="post">
+          <form action="/logout" method="post">
             @csrf
-            <a href="#" onclick="document.getElementById('myform').submit()" class="nav-link px-3 border-0" style="background-color:"><span data-feather="log-out">Logout </span></button>
-          </form> 
+            <button type="submit" class="nav-link px-3 border-0" style="background-color:transparent"><span data-feather="log-out"></span> Logout</button>
+          </form>
         </li>
       </ul>
     </div>

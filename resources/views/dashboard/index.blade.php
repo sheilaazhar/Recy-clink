@@ -92,7 +92,7 @@
       var myLineChart = new Chart(ctxL, {
         type: 'line',
         data: {
-          labels: ["January", "February", "March", "April", "May", "June", "July"], //inishe yang diganti
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], //inishe yang diganti
           datasets: [{
              label: "Jumlah Barang Terjual",
               data: [{{$jualprodukCount}}],

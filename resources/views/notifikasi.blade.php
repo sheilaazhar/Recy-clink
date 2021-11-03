@@ -16,7 +16,7 @@
     @elseif ($notification->data['status'] == "Ditolak")
         <div class="alert notifikasi " role="alert">
             Permintaan Pengumpulan Barang Bekas {{ $notification->data['status'] }} <br>
-            Mohon maaf, permintaan pengumpulan barang bekas {{ $notification->data['jenis_sampah'] }} {{ $notification->data['berat'] }}kg Anda di alamat {{ $notification->data['address'] }} {{ $notification->data['kecamatan'] }} {{ $notification->data['status'] }} karena .... <br>
+            Mohon maaf, permintaan pengumpulan barang bekas {{ $notification->data['jenis_sampah'] }} {{ $notification->data['berat'] }}kg Anda di alamat {{ $notification->data['address'] }}, Kecamatan {{ $notification->data['kecamatan'] }} {{ $notification->data['status'] }} karena ... <br>
             [{{ $notification->created_at }}] 
             <a href="/mark-as-read/{{ $notification->id }}" class="float-right" data-id="{{ $notification->id }}">
                 <img src="./img/silang.png" >
