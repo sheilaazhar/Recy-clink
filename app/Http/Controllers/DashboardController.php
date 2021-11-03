@@ -13,6 +13,8 @@ class DashboardController extends Controller
     public function index() {
         return view('dashboard.index', [
             'userCount' => User::count()-1,
+            'peremCount' => User::where('jk', 'Perempuan')->count()-1,
+            'lakiCount' => User::where('jk', 'Laki-Laki')->count(),
             'kumpulCount' => AmbilSampah::count(),
             'setujuCount' => AmbilSampah::where('status', 'Disetujui')->count(),
             'tolakCount' => AmbilSampah::where('status', 'Ditolak')->count(),
