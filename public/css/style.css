@@ -213,3 +213,24 @@ margin-top: -5px;
   transform: scale(1.05);
 box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06)
 }
+
+.notifikasi{
+  background-color: #FAEDCA;
+}
+
+.about-us{
+  background-image: url(../img/about-us.png);
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center Top;
+}
+.mission{
+  background-color: #E4F4EF;
+}
+
+.team{
+  background-image: url(../img/team.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}
