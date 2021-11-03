@@ -38,9 +38,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <form action="/logout" method="post">
+          <form id="myform" action="/logout" method="post">
             @csrf
-            <button type="submit" class="px-3 border-0" style="background-color: #52B69A"><span data-feather="log-out">Logout </span></button>
+            <a href="#" onclick="document.getElementById('myform').submit()" class="nav-link px-3 border-0" style="background-color:"><span data-feather="log-out">Logout </span></button>
           </form> 
         </li>
       </ul>
