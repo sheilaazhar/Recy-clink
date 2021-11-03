@@ -21,6 +21,7 @@ class DashboardController extends Controller
             'menungguCount' => AmbilSampah::where('status', 'Menunggu konfirmasi')->count(),
             'beratCount' => AmbilSampah::where('status', 'Disetujui')->sum('berat'),
             'jualCount' => Pesanan::where('status_kirim', 'Dikirim')->count(),
+            'tanggalCount' =>Pesanan::where('tanggal'),
             'jualprodukCount' => PesananDetail::sum('jumlah'),
             'priceCount' => Pesanan::sum('total_harga'),
             'tunggukirimCount' => Pesanan::where('status_kirim', 'Menunggu dikirim')->count(),
