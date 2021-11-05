@@ -44,7 +44,7 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="card-body">
-                    Sistem pembayaran dilakukan dengan transaksi <i>Cash On Delivery</i>, jadi tim kami akan menghubungi yang bersangkutan (pembeli) lalu mengunjungi rumahnya.
+                    Sistem pembayaran dilakukan dengan transaksi <i>Cash On Delivery</i>, jadi tim kami akan menghubungi yang bersangkutan (pembeli) lalu mengunjungi rumahnya. Oleh karena itu, sebelum melakukan pembelian pastikan nomor telepon dan alamat yang ada di profil Anda sudah benar.
                  </div>
             </div>
             </div>

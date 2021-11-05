@@ -13,12 +13,16 @@ class DashboardController extends Controller
 {
 
     public function index() {
-        $jualprodukCount = PesananDetail::select(DB::raw("Month(created_at)"))
-                    ->whereYear('created_at', date('Y'))
-                    ->groupBy(DB::raw("Month(created_at)"))
-                    ->sum('jumlah');
+        $jualprodukCount = DB::select(DB::raw("SELECT monthname(created_at) as month, count(id) as jml FROM pesanans WHERE status_kirim='Sudah Dikirim' GROUP BY monthname(created_at) ORDER BY month DESC"));
+        $month ="";
+        $data ="";
+        foreach($jualprodukCount as $val) {
+            $month.="'".$val->month."',";
+            $data.="$val->jml,";
+        }
+        //dd($month, $data);
 
-        return view('dashboard.index', compact('jualprodukCount'), [
+        return view('dashboard.index', compact('data', 'month'), [
             'userCount' => User::count()-1,
             'peremCount' => User::where('jk', 'Perempuan')->count()-1,
             'lakiCount' => User::where('jk', 'Laki-Laki')->count(),

@@ -92,10 +92,10 @@
       var myLineChart = new Chart(ctxL, {
         type: 'line',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], //inishe yang diganti
+          labels: [<?php echo $month?>],
           datasets: [{
-             label: "Jumlah Barang Terjual",
-              data: [{{$jualprodukCount}}],
+             label: "Jumlah Transaksi",
+              data: [{{$data}}],
               backgroundColor: [
                 'rgba(105, 0, 132, .2)'
               ],

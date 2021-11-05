@@ -41,7 +41,7 @@
             <option value="3">3 kg</option>
             <option value="4">4 kg</option>
             <option value="5">5 kg</option>
-            <option value="6"> Lebih dari 6 kg</option>
+            <option value="6"> Lebih dari 5 kg</option>
         </select>
         @error('berat')
         <div class="invalid-feedback">{{ $message }}</div>
