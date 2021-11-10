@@ -16,7 +16,7 @@ class ProdukController extends Controller
         return view('produk', [
            "title" => "Produk",
            'active'=> 'produk',
-           "produks" => Produk::paginate(20)
+           "produks" => Produk::where('stok', '>', 0)->paginate(10)
         ]);
     }
 
