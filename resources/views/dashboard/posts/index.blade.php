@@ -13,7 +13,7 @@
 
   <div class="table-responsive col-lg-8">
     <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Tambah Artikel Baru</a>
-    <table class="table table-striped table-sm">
+    <table class="table table-striped table-sm" id="table_id">
       <thead>
         <tr>
           <th scope="col">#</th>
