@@ -7,6 +7,11 @@
     @if ($produks->count())
     <div class="list-produk bg-trasparent my-4 px-3">
       <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+        @if(session()->has('success'))
+        <div class="alert alert-danger col-lg-12 mt-1" role="alert">
+        {{ session('success') }}
+        </div>
+    @endif
       @foreach($produks as $produk)
       <div class="col-md-3 mt-5">
           <div class="card shadow-sm">

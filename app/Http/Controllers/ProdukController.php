@@ -28,7 +28,7 @@ class ProdukController extends Controller
         //validasi stok
         if($request->jumlah > $produk->stok)
         {
-            return redirect('produk');
+            return redirect('produk')->with('success', 'Jumlah pesanan melebihi stok!');
         }
 
         //cek validasi
