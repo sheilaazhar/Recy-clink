@@ -109,7 +109,7 @@ class ProfilController extends Controller
         $this->validate($request, [
             'name'=>'required|max:255',
             'jk'=>'required|max:255',
-            'phone'=>'required|min:10|max:15',
+            'phone'=>'required|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:9|max:15',
             'kecamatan_id'=>'required',
             'address'=>'required|max:255',
             'password'=>'required|min:5|max:255'
@@ -121,16 +121,21 @@ class ProfilController extends Controller
         $user->phone = $request->phone;
         $user->kecamatan_id = $request->kecamatan_id;
         $user->address = $request->address;
-        $user->password = $request->password;
+        //$user->password = $request->password;
 
-        if(!empty($request->password))
+        // if(!empty($request->password))
+        // {
+        //     $user->password = Hash::make($request->password);
+        // }
+
+        if (Hash::check($request->password, $user->password))
         {
-            $user->password = Hash::make($request->password);
+            $user->update();
+            return redirect('/profil')->with('success', 'Profil Berhasil Diupdate');
         }
-        
-        $user->update();
 
-        return redirect('/profil')->with('success', 'Profil Berhasil Diupdate');
+        return back()->with('updateError', 'Update Profil Gagal! Pastikan Password Anda Benar');
+        
     }
 
     /**

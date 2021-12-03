@@ -36,7 +36,7 @@
         </div>
         <div class="mb-3">
           <label for="stok" class="form-label">Stok</label>
-          <input type="text" class="form-control @error('stok') is-invalid @enderror" id="stok" name="stok" required value="{{ old('stok') }}">
+          <input type="number" class="form-control @error('stok') is-invalid @enderror" id="stok" name="stok" required value="{{ old('stok') }}">
           @error('stok')
           <div class="invalid-feedback">
             {{ $message }}

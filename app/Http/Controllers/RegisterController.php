@@ -25,7 +25,7 @@ class RegisterController extends Controller
             'username'=>['required','min:3','max:255','unique:users'],
             'jk'=>'required',
             'email'=>'required|email:dns|unique:users',
-            'phone'=>'required|min:10|max:15',
+            'phone'=>'required|regex:/(0)[0-9]/|not_regex:/[a-z]/|min:9|max:15',
             'kecamatan_id'=>'required',
             'address'=>'required|max:255',
             'password'=>'required|min:5|max:255'

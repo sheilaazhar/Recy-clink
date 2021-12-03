@@ -42,8 +42,8 @@ class DashboardProdukController extends Controller
         $validatedData = $request->validate([
             'nama_produk' => 'required|max:255',
             'bahan' => 'required|max:255',
-            'harga' => 'required|max:255',
-            'stok' => 'required|max:255',
+            'harga' => 'required|numeric|digits_between:4,6',
+            'stok' => 'required|numeric|digits_between:1,4',
             'image' => 'required|image|file|max:1024',
         ]);
 
@@ -93,8 +93,8 @@ class DashboardProdukController extends Controller
         $rules = [
             'nama_produk' => 'required|max:255',
             'bahan' => 'required|max:255',
-            'harga' => 'required|max:255',
-            'stok' => 'required|max:255',
+            'harga' => 'required|numeric|digits_between:4,6',
+            'stok' => 'required|numeric|digits_between:1,4',
             'image' => 'image|file|max:1024',
         ];
 

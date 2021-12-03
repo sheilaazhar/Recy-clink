@@ -29,7 +29,7 @@
                 @enderror
               </div>
               <div class="form-floating">
-                <input type="phone" name="phone" class="form-control @error('phone') is-invalid @enderror" id="phone" placeholder="08XXXXXXXXXX" required value="{{ old('phone') }}">
+                <input type="tel" name="phone" class="form-control @error('phone') is-invalid @enderror" id="phone" placeholder="08XXXXXXXXXX" required value="{{ old('phone') }}">
                 <label for="phone">Phone Number</label>
                 @error('phone')
                 <div class="invalid-feedback">{{ $message }}</div>

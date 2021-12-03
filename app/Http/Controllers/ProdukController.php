@@ -31,6 +31,11 @@ class ProdukController extends Controller
             return redirect('produk')->with('success', 'Jumlah pesanan melebihi stok!');
         }
 
+        else if($request->jumlah < 1)
+        {
+            return redirect('produk')->with('success', 'Pastikan jumlah pesanan yang dimasukkan benar!');
+        }
+
         //cek validasi
         $cek_pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status',0)->first();
 

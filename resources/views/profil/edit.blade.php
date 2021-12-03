@@ -4,6 +4,12 @@
 <div class="container">
 <h1 class="mt-5 edit">Edit Profil</h1>
 <div class="row justify-content-center">
+  @if(session()->has('updateError'))
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('updateError') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+  @endif
   <div class="col-md-2"></div>
   <div class="col-md-3 mt-5 label">
     <h4 class="mb-4 mt-1">Name</h4>
